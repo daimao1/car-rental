@@ -33,7 +33,7 @@ public class CustomerServiceImpl implements CustomerService{
     }
 
     @Override
-    public Customer createCustomer(Customer customer) {
+    public Customer addCustomer(Customer customer) {
         customerRepository.save(customer);
         return customer;
     }
@@ -52,7 +52,7 @@ public class CustomerServiceImpl implements CustomerService{
     public void deleteCustomer(Long id) {
         Customer foundCustomer = customerRepository.findOne(id);
         if (foundCustomer == null) {
-            throw new NoResultException("Cannot update Customer. Object not found.");
+            throw new NoResultException("Cannot delete Customer. Object not found.");
         }
         customerRepository.delete(id);
     }
