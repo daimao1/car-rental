@@ -2,6 +2,8 @@ package carrental;
 
 import java.util.Arrays;
 
+import carrental.customer.model.Customer;
+import carrental.customer.repository.CustomerRepository;
 import org.hibernate.SessionFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -36,6 +38,16 @@ public class Application {
     @Bean
     public HibernateJpaSessionFactoryBean sessionFactory() {
         return new HibernateJpaSessionFactoryBean();
+    }
+
+    @Bean
+    public CommandLineRunner demo(CustomerRepository repository) {
+        return (args) -> {
+            repository.save(new Customer("John Smith", "AWI-1817", "USA", "New York",
+                    "WallStreet 18/5", "New York", "12345", "123456789"));
+
+        };
+
     }
 
 }
