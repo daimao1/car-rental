@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-
 @RestController
 @RequestMapping("/customer")
 public class CustomerController {
@@ -30,21 +29,21 @@ public class CustomerController {
         return new ResponseEntity<>(customer, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/create", method = RequestMethod.POST,
+    @RequestMapping(value = "/add", method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Customer> addCustomer(@RequestBody Customer customer) {
         Customer createdCustomer = customerService.addCustomer(customer);
         return new ResponseEntity<>(createdCustomer, HttpStatus.CREATED);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.POST,
+    @RequestMapping(value = "update/{id}", method = RequestMethod.POST,
             consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Customer> updateCustomer(@RequestBody Customer customer) {
         Customer updatedCustomer = customerService.updateCustomer(customer);
         return new ResponseEntity<>(updatedCustomer, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
     public ResponseEntity deleteCustomer(@PathVariable("id") Long id) {
         customerService.deleteCustomer(id);
         return new ResponseEntity(HttpStatus.OK);
