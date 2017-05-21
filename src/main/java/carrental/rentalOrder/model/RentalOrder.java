@@ -12,6 +12,7 @@ import java.util.Date;
 @Entity
 public class RentalOrder {
 
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -35,7 +36,7 @@ public class RentalOrder {
     private int distance;
 
     @NotNull
-    @Size(min = 5, max = 20)
+    @Size(min = 5, max = 40)
     private String status;
 
     public Long getId() {

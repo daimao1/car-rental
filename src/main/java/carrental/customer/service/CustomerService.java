@@ -14,6 +14,4 @@ public interface CustomerService {
     Customer updateCustomer(Customer customer);
 
     void deleteCustomer(Long id);
-
-    Customer loadCustomerByFullName(String fullName);
 }

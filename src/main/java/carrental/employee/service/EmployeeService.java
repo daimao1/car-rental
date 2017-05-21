@@ -15,5 +15,4 @@ public interface EmployeeService {
 
     void deleteEmployee(Long id);
 
-    Employee loadEmployeeByFullName(String fullName);
 }

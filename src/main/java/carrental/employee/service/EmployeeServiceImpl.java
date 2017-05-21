@@ -5,10 +5,12 @@ import carrental.employee.repository.EmployeeRepository;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.NoResultException;
 import java.util.List;
 
+@Service
 public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
@@ -53,13 +55,4 @@ public class EmployeeServiceImpl implements EmployeeService {
         employeeRepository.delete(id);
     }
 
-    @Override
-    public Employee loadEmployeeByFullName(String fullName) {
-        return (Employee) sessionFactory.getCurrentSession()
-
-                .createCriteria(Employee.class)
-                .add(Restrictions.eq("fullName", fullName))
-                .uniqueResult();
-
-    }
 }

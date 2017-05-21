@@ -6,10 +6,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.criterion.Restrictions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.NoResultException;
 import java.util.List;
 
+@Service
 public class CarServiceImpl implements CarService {
     @Autowired
     CarRepository carRepository;
@@ -54,12 +56,4 @@ public class CarServiceImpl implements CarService {
         carRepository.delete(id);
     }
 
-    @Override
-    public Car loadCarByRegNumber(String regNumber) {
-        return (Car) sessionFactory.getCurrentSession()
-
-                .createCriteria(Car.class)
-                .add(Restrictions.eq("regNumber", regNumber))
-                .uniqueResult();
-    }
 }

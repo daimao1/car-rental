@@ -1,13 +1,11 @@
 package carrental.customer.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@Entity // This tells Hibernate to make a table out of this class
+@Entity
 public class Customer {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -45,19 +43,7 @@ public class Customer {
     @Size(min=9,max=12)
     private String phoneNum;
 
-    public Customer() {
-    }
 
-    public Customer(String fullName, String drivingLicenceNum, String country, String city, String address, String state, String zipCode, String phoneNum) {
-        this.fullName = fullName;
-        this.drivingLicenceNum = drivingLicenceNum;
-        this.country = country;
-        this.city = city;
-        this.address = address;
-        this.state = state;
-        this.zipCode = zipCode;
-        this.phoneNum = phoneNum;
-    }
 
     public Long getId() {
         return id;
@@ -126,4 +112,5 @@ public class Customer {
     public void setPhoneNum(String phoneNum) {
         this.phoneNum = phoneNum;
     }
+
 }

@@ -56,12 +56,5 @@ public class CustomerServiceImpl implements CustomerService{
         }
         customerRepository.delete(id);
     }
-    @Override
-    public Customer loadCustomerByFullName(String fullName) {
-        return (Customer) sessionFactory.getCurrentSession()
 
-                .createCriteria(Customer.class)
-                .add(Restrictions.eq("fullName",fullName))
-                .uniqueResult();
-    }
 }

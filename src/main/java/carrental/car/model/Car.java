@@ -34,7 +34,7 @@ public class Car {
     private String category;
 
     @NotNull
-    private boolean isAvailable;
+    private boolean available;
 
     public long getId() {
         return id;
@@ -80,12 +80,12 @@ public class Car {
         this.category = category;
     }
 
-
     public boolean isAvailable() {
-        return isAvailable;
+        return available;
     }
 
     public void setAvailable(boolean available) {
-        isAvailable = available;
+        this.available = available;
     }
 }
+

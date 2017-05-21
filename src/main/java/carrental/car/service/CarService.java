@@ -15,5 +15,4 @@ public interface CarService {
 
     void deleteCar(Long id);
 
-    Car loadCarByRegNumber(String regNumber);
 }

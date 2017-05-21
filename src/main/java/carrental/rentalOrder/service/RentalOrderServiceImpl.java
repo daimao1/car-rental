@@ -3,10 +3,12 @@ package carrental.rentalOrder.service;
 import carrental.rentalOrder.model.RentalOrder;
 import carrental.rentalOrder.repository.RentalOrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.NoResultException;
 import java.util.List;
 
+@Service
 public class RentalOrderServiceImpl implements RentalOrderService {
     @Autowired
     RentalOrderRepository rentalOrderRepository;
