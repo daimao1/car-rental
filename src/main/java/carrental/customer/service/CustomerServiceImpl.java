@@ -17,9 +17,6 @@ public class CustomerServiceImpl implements CustomerService{
     @Autowired
     private CustomerRepository customerRepository;
 
-    @Autowired
-    private SessionFactory sessionFactory;
-
     @Override
     public List<Customer> getAllCustomers() {
         List <Customer> customers = customerRepository.findAll();

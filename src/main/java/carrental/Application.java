@@ -40,14 +40,5 @@ public class Application {
         return new HibernateJpaSessionFactoryBean();
     }
 
-//    @Bean
-//    public CommandLineRunner demo(CustomerRepository repository) {
-//        return (args) -> {
-//            repository.save(new Customer("John Smith", "AWI01817", "USA", "New York",
-//                    "WallStreet 18/5", "New York", "12345", "123456789"));
-//
-//        };
-//
-//    }
 
 }

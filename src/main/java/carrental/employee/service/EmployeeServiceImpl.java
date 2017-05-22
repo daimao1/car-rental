@@ -15,8 +15,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    @Autowired
-    SessionFactory sessionFactory;
 
     @Override
     public List<Employee> getAllEmployees() {
@@ -40,7 +38,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public Employee updateEmployee(Employee employee) {
         Employee foundEmployee = employeeRepository.findOne(employee.getId());
         if (foundEmployee == null) {
-            throw new NoResultException("Cannot update Customer. Object not found.");
+            throw new NoResultException("Cannot update Employee. Object not found.");
         }
         employeeRepository.save(employee);
         return employee;
@@ -50,7 +48,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void deleteEmployee(Long id) {
         Employee foundEmployee = employeeRepository.findOne(id);
         if (foundEmployee == null) {
-            throw new NoResultException("Cannot delete Customer. Object not found.");
+            throw new NoResultException("Cannot delete Employee. Object not found.");
         }
         employeeRepository.delete(id);
     }

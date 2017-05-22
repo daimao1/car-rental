@@ -43,7 +43,16 @@ public class Customer {
     @Size(min=9,max=12)
     private String phoneNum;
 
-
+    public Customer(String fullName, String drivingLicenceNum, String country, String city, String address, String state, String zipCode, String phoneNum) {
+        this.fullName = fullName;
+        this.drivingLicenceNum = drivingLicenceNum;
+        this.country = country;
+        this.city = city;
+        this.address = address;
+        this.state = state;
+        this.zipCode = zipCode;
+        this.phoneNum = phoneNum;
+    }
 
     public Long getId() {
         return id;

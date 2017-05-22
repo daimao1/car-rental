@@ -16,9 +16,6 @@ public class CarServiceImpl implements CarService {
     @Autowired
     CarRepository carRepository;
 
-    @Autowired
-    SessionFactory sessionFactory;
-
     @Override
     public List<Car> getAllCars() {
         List<Car> cars = carRepository.findAll();
